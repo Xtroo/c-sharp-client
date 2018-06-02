@@ -1,6 +1,6 @@
 # Xtroo C# API Client Example
 ## Overview
-This is an example client that demonstrates how to query the Xtroo API using C#.
+This is an example client that demonstrates how to query the Xtroo API using C#. You are free to use this code in part or completely in your own projects, it is written in a way to make it as modular as possible, along with comments to make it clear what is happening.
 
 ## Usage
 1. Download this repository.
