@@ -48,8 +48,22 @@ namespace xtroo_example_client
             // Lastly we add the url itself.
             client.QueryString.Add("url", urlToGrab);
 
-            // The response is in JSON so we send the DownloadString request to get it.
-            string json = client.DownloadString("content");
+            // Create an empty string variable for storing our JSON.
+            string json = "";
+
+            // Make sure we have gotten a valid response.
+            try
+            {
+                // The response is in JSON so we send the DownloadString request to get it.
+                json = client.DownloadString("content");
+            }
+            catch (WebException ex)
+            {
+                Console.WriteLine("There was an error, the error was: " + ex.Message);
+                Console.WriteLine("Press any key to close the application.");
+                Console.ReadKey();
+                Environment.Exit(1);
+            }
 
             // We conver that returned string into a JSON object so we can reference it. 
             JObject obj = JObject.Parse(json);
